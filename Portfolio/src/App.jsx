@@ -1,13 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import Title from "./components/Title";
 
+import useWindowScrollPositions from "./components/useWindowScrollPositions ";
+
 import rocket from "./assets/rocket.png";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { scrollX, scrollY } = useWindowScrollPositions();
+  const [moveRocketY, setMoveRocketY] = useState(0);
+  const [moveRocketX, setMoveRocketX] = useState(0);
+  const [rocketRotate, setRocketRotate] = useState(180);
+
+  const [showRocket, setShowRocket] = useState(1);
+
+  function setWhole(number) {
+    return Math.floor(number / 50) * 50;
+  }
+
+  useEffect(() => {
+    let temp = Math.floor(setWhole(scrollY));
+    console.log(temp);
+
+    if (temp >= 150 && temp < 850) {
+      setMoveRocketX(Math.floor(setWhole(scrollY)) - 100);
+      setRocketRotate(90);
+      setShowRocket(1);
+    } else if (temp < 150) {
+      setMoveRocketX(0);
+      setMoveRocketY(temp);
+      setRocketRotate(180);
+      setShowRocket(1);
+    }
+
+    if (temp >= 850) {
+      setMoveRocketX(Math.floor(setWhole(scrollY)) - 100);
+      setShowRocket(2);
+    }
+  }, [scrollY]);
 
   return (
     <div className="w-full h-full relative">
@@ -22,13 +54,37 @@ function App() {
       <Title />
 
       {/* ROCKET */}
-      <div className="w-full justify-center items-center flex absolute">
-        <img
-          src={rocket}
-          alt="Logo Rocket"
-          className="rotate-180 rocket mt-10 hover:mt-16 transition-all duration-200"
-        />
-      </div>
+
+      {showRocket === 1 ? (
+        <div className="w-full justify-center items-center flex absolute">
+          <img
+            src={rocket}
+            alt="Logo Rocket"
+            className="rocket transition-translate duration-100 mt-12"
+            style={{
+              transform: `translateY(${moveRocketY}px) translateX(${moveRocketX}px) rotate(${rocketRotate}deg)`,
+            }}
+          />
+        </div>
+      ) : (
+        <></>
+      )}
+
+      {showRocket === 2 ? (
+        <div className="w-full justify-center items-center flex absolute top-[70rem] -left-[92rem]">
+          <img
+            src={rocket}
+            alt="Logo Rocket"
+            className="rocket transition-translate duration-100"
+            style={{
+              transform: `translateY(${moveRocketY}px) translateX(${moveRocketX}px) rotate(${rocketRotate}deg)`,
+            }}
+          />
+        </div>
+      ) : (
+        <></>
+      )}
+
       {/* ROCKET */}
 
       <div className="w-full h-12 mt-72 flex justify-center items-center">
@@ -42,6 +98,9 @@ function App() {
       </div>
 
       {/* END UPPER TITLE PAGE */}
+
+      <section className="w-full h-screen"></section>
+      <section className="w-full h-screen"></section>
     </div>
   );
 }

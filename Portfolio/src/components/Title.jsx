@@ -51,12 +51,12 @@ const Title = () => {
     return () => clearInterval(interval);
   }, [display]);
   return (
-    <div className="w-full h-96 mt-40 flex flex-col leading-none z-20 items-center">
-      <h3 className="text-3xl font-thin">HEY I'M</h3>
-      <h1 className="text-[5rem] font-bold">
+    <div className="w-full h-96 mt-10 lg:mt-14 flex flex-col leading-none z-20 items-center">
+      <h3 className="text-[3rem] mb-2 lg:mb-0 lg:text-2xl font-thin">HEY I'M</h3>
+      <h1 className="text-[1.3rem] lg:text-[2.8rem] font-bold">
         KIELO BASH <span className="font-thin text-teal-300">M</span>ERCADO
       </h1>
-      <h2 className="text-[3rem] font-thin mt-5">
+      <h2 className="lg:text-[2rem] font-thin mt-2 lg:mt-3">
         I'M A <span className="font-bold text-teal-300">{display}</span>
       </h2>
     </div>

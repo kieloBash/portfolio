@@ -8,10 +8,10 @@ const Navbar = () => {
     { name: "CONTACT", link: "" },
   ];
   return (
-    <div className="w-full flex justify-center items-center mb-5 z-10">
-      <nav className="font-normal flex justify-between w-3/6">
+    <div className="w-full flex justify-center items-center mb-5">
+      <nav className="font-normal flex justify-evenly w-5/6 lg:w-2/6 ">
         {navlinks.map((nav, index) => {
-          return <div key={index} className="text-2xl hover:text-teal-300 transition-colors duration-200 cursor-pointer">{nav.name}</div>;
+          return <div key={index} className="text-sm lg:text-lg font-thin hover:text-teal-300 transition-colors duration-200 cursor-pointer">{nav.name}</div>;
         })}
       </nav>
     </div>

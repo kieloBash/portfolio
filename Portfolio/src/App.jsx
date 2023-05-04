@@ -16,19 +16,18 @@ function App() {
 
   const [showRocket, setShowRocket] = useState(1);
 
-  const atPoint = [250, 850, 1000];
+  const atPoint = [220];
 
   function setWhole(number) {
-    return Math.floor(number / 50) * 50;
+    return Math.floor(number / 20) * 20;
   }
 
   useEffect(() => {
     let position = setWhole(scrollY);
     console.log(position);
 
-
-    if(position >= atPoint[0]){
-      setMoveRocketY(position-atPoint[0])
+    if (position >= atPoint[0]) {
+      setMoveRocketY(position - atPoint[0]);
     }
 
     // if (position >= 0 && position < atPoint[0]) {
@@ -94,7 +93,7 @@ function App() {
             <Title />
           </div>
           <div className="w-full flex justify-center items-center">
-            <div className="text-white/80 lg:text-center text-justify w-full text-xl font-thin px-8 lg:px-0 lg:w-3/6 lg:text-[15px] mt-16">
+            <div className="text-white/80 text-center w-full text-xl font-thin px-8 lg:px-0 lg:w-3/6 lg:text-[15px] lg:mt-10">
               <p className="paragraph">
                 Welcome to my portfolio website! As an undergraduate student, I
                 am thrilled to share with you my skills, experiences, and

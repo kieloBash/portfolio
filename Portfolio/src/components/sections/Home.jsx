@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 
-
 import Navbar from "../Navbar";
 import Title from "../Title";
 

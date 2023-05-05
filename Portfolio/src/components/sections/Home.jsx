@@ -1,16 +1,31 @@
-import React from "react";
-import { motion, useTransform } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useTransform, useScroll } from "framer-motion";
+
 
 import Navbar from "../Navbar";
 import Title from "../Title";
 
 const Home = () => {
-  // const opacity = useTransform(scrollYProgress, [0, 0.5], [2, 0]);
-  // const scale = useTransform(scrollYProgress, [0, 1], [1.1, 0.5]);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1.1, 0.5]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [2, 0]);
 
   return (
-    <section className="w-full h-full">
-      <div className="flex flex-col py-8 h-full relative items-center">
+    <motion.section
+      className="w-full h-full -mt-4"
+      ref={ref}
+      style={{ opacity }}
+      id="Home"
+    >
+      <motion.div
+        className="flex flex-col py-8 h-full relative items-center"
+        style={{ scale }}
+      >
         <div className="w-full h-1/3 lg:h-3/5 max-w-[50rem] rounded-b-full bg-black/30 absolute top-0 shadow-xl z-0"></div>
         <div className="w-full z-20">
           <Navbar />
@@ -25,8 +40,8 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

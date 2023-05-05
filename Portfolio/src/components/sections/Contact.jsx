@@ -4,7 +4,7 @@ import stars from "../../assets/stars.png";
 
 const Contact = () => {
   return (
-    <section className="w-full h-screen mt-48 py-2 flex flex-col justify-center items-center">
+    <section className="w-full h-screen mt-48 py-2 flex flex-col justify-center items-center" id='Contact'>
         <div className="absolute w-full h-full">
             <img src={stars} alt="" className="w-20 absolute top-[5%] right-[10%]"/>
             <img src={stars} alt="" className="w-24 absolute bottom-20 left-[25%]"/>

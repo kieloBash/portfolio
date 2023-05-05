@@ -4,11 +4,15 @@ import stars from "../../assets/stars.png";
 
 const Skills = () => {
   return (
-    <section className="w-full h-full relative flex flex-col mb-20 mt-10">
-        <div className="absolute w-full h-full">
-            <img src={stars} alt="" className="w-28 absolute top-32 right-[30%]"/>
-            <img src={stars} alt="" className="w-24 absolute bottom-20 left-[25%]"/>
-        </div>
+    <section className="w-full h-screen relative flex flex-col pt-10" id="Skills">
+      <div className="absolute w-full h-full">
+        <img src={stars} alt="" className="w-28 absolute top-32 right-[30%]" />
+        <img
+          src={stars}
+          alt=""
+          className="w-24 absolute bottom-20 left-[25%]"
+        />
+      </div>
       <h1 className="w-full text-center text-[5rem] font-semibold text-teal-300 mb-4">
         SKILLS
       </h1>

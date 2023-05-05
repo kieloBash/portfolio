@@ -3,7 +3,7 @@ import planet from "../../assets/planet.png";
 
 const about = () => {
   return (
-    <section className="w-full flex flex-col justify-center mt-20 mb-20">
+    <section className="w-full h-screen flex flex-col justify-center" id='About'>
       <div className="flex">
         <div className="basis-2/4">
           <img src={planet} className="h-full w-full" />

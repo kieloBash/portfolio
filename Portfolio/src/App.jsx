@@ -39,7 +39,7 @@ function App() {
           animate={isInView ? "open": "closed"}
           variants={sideAnimate}
         >
-          <SideBar />
+          <SideBar isInView={isInView}/>
         </motion.div>
         <div className="-ml-[30rem] w-full h-full">
           <Home refs={ref} />

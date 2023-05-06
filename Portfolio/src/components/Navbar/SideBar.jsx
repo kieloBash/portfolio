@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, useCycle } from "framer-motion";
 
 import NavbarToggle from "./NavbarToggle";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-const SideBar = () => {
+const SideBar = ({ isInView }) => {
   const [toggle, setToggle] = useCycle(false, true);
   const navlinks = [
     {
@@ -87,6 +87,12 @@ const SideBar = () => {
       },
     },
   };
+
+  useEffect(() => {
+    if (isInView) {
+      setToggle(false);
+    }
+  }, [isInView]);
 
   return (
     <motion.nav

@@ -48,6 +48,14 @@ const Contact = () => {
     },
   };
 
+  const containerAnimate = {
+    offScreen: { opacity: 0 },
+    onScreen: {
+      opacity: 1,
+      transition: { type: "spring", duration: 1.5, bounce: 0.4, staggerChildren: 0.3 },
+    },
+  };
+
   return (
     <motion.section
       className="w-full h-screen mt-48 py-2 flex flex-col justify-center items-center overflow-x-hidden"
@@ -55,7 +63,7 @@ const Contact = () => {
       initial={"offScreen"}
       whileInView={"onScreen"}
       viewport={{ once: false, amount: 0.3 }}
-      transition={{ staggerChildren: 0.3 }}
+      variants={containerAnimate}
     >
       <div className="absolute w-full h-full z-0">
         <img

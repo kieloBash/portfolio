@@ -88,12 +88,6 @@ const SideBar = ({ isInView }) => {
     },
   };
 
-  useEffect(() => {
-    if (isInView) {
-      setToggle(false);
-    }
-  }, [isInView]);
-
   return (
     <motion.nav
       className={`sticky top-0 z-20 left-0 h-[105vh] w-full shadow-xl bg-black/30 py-4 px-8`}

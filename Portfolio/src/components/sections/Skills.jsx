@@ -9,7 +9,12 @@ const Skills = () => {
     offScreen: { opacity: 0 },
     onScreen: {
       opacity: 1,
-      transition: { type: "spring", duration: 1.5, bounce: 0.4, staggerChildren: 0.3 },
+      transition: {
+        type: "spring",
+        duration: 1.5,
+        bounce: 0.4,
+        staggerChildren: 0.3,
+      },
     },
   };
   const textAnimate = {

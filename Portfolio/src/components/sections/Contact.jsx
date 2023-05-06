@@ -3,7 +3,6 @@ import planet from "../../assets/planet.png";
 import stars from "../../assets/stars.png";
 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
   const contacts = [

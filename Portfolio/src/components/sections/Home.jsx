@@ -1,10 +1,16 @@
-import React, { useRef } from "react";
-import { motion, useTransform, useScroll } from "framer-motion";
-
+import React, { useEffect, useRef } from "react";
 import Navbar from "../Navbar";
 import Title from "../Title";
 
-const Home = () => {
+import {
+  motion,
+  useAnimation,
+  useScroll,
+  useTransform,
+  useInView,
+} from "framer-motion";
+
+const Home = ({ refs }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -27,7 +33,9 @@ const Home = () => {
       >
         <div className="w-full h-1/3 lg:h-3/5 max-w-[50rem] rounded-b-full bg-black/30 absolute top-0 shadow-xl z-0"></div>
         <div className="w-full z-20">
-          <Navbar />
+          <div className="" ref={refs}>
+            <Navbar />
+          </div>
           <Title />
         </div>
         <div className="w-full flex justify-center items-center">

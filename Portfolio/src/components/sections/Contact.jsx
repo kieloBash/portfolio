@@ -57,7 +57,7 @@ const Contact = () => {
 
   return (
     <motion.section
-      className="w-full h-screen mt-48 py-2 flex flex-col justify-center items-center overflow-x-hidden"
+      className="w-full h-screen py-2 flex flex-col justify-center items-center overflow-x-hidden"
       id="Contact"
       initial={"offScreen"}
       whileInView={"onScreen"}

@@ -14,9 +14,9 @@ function App() {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  useEffect(() => {
-    console.log(isInView);
-  }, [isInView]);
+  // useEffect(() => {
+  //   console.log(isInView);
+  // }, [isInView]);
 
   const sideAnimate = {
     open: {

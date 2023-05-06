@@ -130,14 +130,14 @@ const Carousel = () => {
       variants={containerAnimate}
       className="max-w-[1400px] h-[780px] w-full m-auto px-4 relative group"
     >
-      <div class="flex w-full flex-wrap justify-center items-center">
-        <motion.div class="w-[65%] h-[40vh] p-1 md:p-2" variants={imageAnimate}>
+      <div className="flex w-full flex-wrap justify-center items-center">
+        <motion.div className="w-[65%] h-[40vh] p-1 md:p-2" variants={imageAnimate}>
           <motion.img
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", duration: 0.2 }}
             alt="gallery"
-            class="bg-center bg-cover duration-500 block h-full w-full rounded-lg object-cover object-center"
+            className="bg-center bg-cover duration-500 block h-full w-full rounded-lg object-cover object-center"
             src={slides[currentIndex].url}
           ></motion.img>
         </motion.div>

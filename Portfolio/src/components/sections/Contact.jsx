@@ -4,7 +4,7 @@ import stars from "../../assets/stars.png";
 
 import { motion } from "framer-motion";
 
-const Contact = () => {
+const Contact = ({bottomRef}) => {
   const contacts = [
     {
       link: "kieloBash",
@@ -63,6 +63,7 @@ const Contact = () => {
       whileInView={"onScreen"}
       viewport={{ once: false, amount: 0.3 }}
       variants={containerAnimate}
+      // ref={bottomRef}
     >
       <div className="absolute w-full h-full z-0">
         <img
